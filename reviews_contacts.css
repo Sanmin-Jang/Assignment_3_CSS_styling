@@ -1,0 +1,239 @@
+/* GRID LAYOUT */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Grid areas */
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main-content { grid-area: main; }
+.footer { grid-area: footer; }
+/* SIDEBAR */
+.sidebar {
+    background: #000000;
+    padding: 20px;
+    color: #eee;
+}
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #e50914;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.sidebar ul li {
+    margin: 8px 0;
+}
+.sidebar ul li a {
+    color: #eee;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.sidebar ul li a:hover {
+    color: #e50914;
+}
+header {
+    grid-column: 1 / -1; /* растянуть на все колонки */
+    background: #000;
+    width: 100%;
+}
+/* === General site style === */
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #000 0%, #111
+    100%);
+    color: #eee;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Navigation */
+header nav {
+    display: flex;
+    background: #000;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
+    justify-content: space-between; /* лого слева, ссылки справа */
+    align-items: center;            /* по вертикали центр */
+}
+.logo img {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+nav a:hover,
+nav a.active {
+    color: red;
+}
+nav a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: red;
+    width: 0;
+    transition: width 0.3s;
+    margin: auto;
+}
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+/* Section titles */
+.section-title {
+    text-align: center;
+    color: red;
+    margin: 40px 0 20px;
+    font-size: 28px;
+    position: relative;
+}
+.section-title::before {
+    content: " ";
+    margin-right: 10px;
+}
+.section-title::after {
+    content: " ";
+    margin-left: 10px;
+}
+/* === Reviews Page === */
+.review {
+    display: flex;
+    align-items: center;
+    background: #181818;
+    border-left: 4px solid red;
+    padding: 20px;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.review:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+.review img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+    border: 3px solid red;
+    transition: 0.3s;
+}
+.review img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+.review h3 {
+    margin: 0;
+    color: red;
+}
+.review p {
+    margin: 5px 0 0;
+    font-style: italic;
+    color: #ddd;
+}
+/* === Contacts Page === */
+.contact-info {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+}.contact-info p strong {
+     color: red;
+ }
+.map iframe {
+    width: 90%;
+    max-width: 700px;
+    height: 350px;
+    border: 2px solid red;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+}
+.contact-form {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: #181818;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: #222;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+    font-size: 16px;transition: border 0.3s, box-shadow 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid red;
+    box-shadow: 0 0 10px red;
+    outline: none;
+}
+.contact-form button {
+    width: 100%;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.2s;
+}
+.contact-form button:hover {
+    background: #b30000;
+    transform: translateY(-2px);
+}
+.form-title {
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+footer {
+    grid-column: 1 / -1; /* растянуть футер на все колонки */
+    background: #000;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid red;
+    color: #777;
+}
+
